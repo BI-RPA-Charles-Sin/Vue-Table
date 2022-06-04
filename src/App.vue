@@ -1,15 +1,29 @@
 <template>
   <div class="container">
-    <Table />
+    <Table :state="state.data" />
   </div>
 </template>
 
 <script>
+import { reactive } from "vue";
+// Component
 import Table from "./components/Table";
+// Data
+import usersData from "./mock/users.json";
 
 export default {
   name: "App",
   components: { Table },
+
+  setup() {
+    const state = reactive({
+      data: usersData,
+    });
+
+    return {
+      state,
+    };
+  },
 };
 </script>
 

@@ -1,44 +1,8 @@
 <template>
   <tbody class="custom-table-body">
-    <tr>
-      <td>1</td>
-      <td>One</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Two</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Three</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Four</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Five</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Six</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>Seven</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>Eight</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>Nine</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>Ten</td>
+    <tr v-for="item in data" :key="item.id">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
     </tr>
   </tbody>
 </template>
@@ -46,6 +10,9 @@
 <script>
 export default {
   name: "TableContent",
+  props: {
+    data: Array,
+  },
 };
 </script>
 

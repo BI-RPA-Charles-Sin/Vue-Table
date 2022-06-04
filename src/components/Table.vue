@@ -1,7 +1,7 @@
 <template>
   <table class="custom-table">
     <TableHeader />
-    <TableContent />
+    <TableContent :data="state" />
   </table>
 </template>
 
@@ -12,6 +12,10 @@ import TableContent from "./TableContent";
 export default {
   name: "Table",
   components: { TableHeader, TableContent },
+
+  props: {
+    state: Array,
+  },
 };
 </script>
 
